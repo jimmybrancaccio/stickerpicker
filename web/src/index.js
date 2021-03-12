@@ -284,7 +284,7 @@ const scrollToSection = (evt, id) => {
 
 const NavBarItem = ({ pack, iconOverride = null }) => html`
 	<a href="#pack-${pack.id}" id="nav-${pack.id}" data-pack-id=${pack.id} title=${pack.title}
-	   onClick=${isMobileSafari ? (evt => scrollToSection(evt, pack.id)) : undefined}>
+	   onClick=${(evt => scrollToSection(evt, pack.id))}>
 		<div class="sticker">
 			${iconOverride ? html`
 				<span class="icon icon-${iconOverride}"/>
