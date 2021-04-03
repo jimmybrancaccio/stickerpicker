@@ -1,5 +1,5 @@
 * {
-    font-family:sans-serif
+    font-family: 'Nunito', sans-serif;
 }
 
 body {
@@ -70,11 +70,11 @@ main.theme-black {
 }
 
 .icon.icon-settings {
-    --icon-image: url(../res/settings.svg)
+    --icon-image: url(./res/settings.svg)
 }
 
 .icon.icon-recent {
-    --icon-image: url(../res/recent.svg)
+    --icon-image: url(./res/recent.svg)
 }
 
 nav {
