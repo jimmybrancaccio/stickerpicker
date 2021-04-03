@@ -236,13 +236,11 @@ class App extends Component {
 			return html`<main class="empty ${theme}"><h1>No packs found 😿</h1></main>`
 		}
 		return html`<main class="has-content ${theme}">
-			<div>
-				<nav onWheel=${this.navScroll} ref=${elem => this.navRef = elem}>
-					<${NavBarItem} pack=${this.state.frequentlyUsed} iconOverride="recent" />
-					${this.state.packs.map(pack => html`<${NavBarItem} id=${pack.id} pack=${pack}/>`)}
-					<${NavBarItem} pack=${{ id: "settings", title: "Settings" }} iconOverride="settings" />
-				</nav>
-			</div>
+			<nav onWheel=${this.navScroll} ref=${elem => this.navRef = elem}>
+				<${NavBarItem} pack=${this.state.frequentlyUsed} iconOverride="recent" />
+				${this.state.packs.map(pack => html`<${NavBarItem} id=${pack.id} pack=${pack}/>`)}
+				<${NavBarItem} pack=${{ id: "settings", title: "Settings" }} iconOverride="settings" />
+			</nav>
 			<div class="pack-list ${isMobileSafari ? "ios-safari-hack" : ""}" ref=${elem => this.packListRef = elem}>
 				<${Pack} pack=${this.state.frequentlyUsed} send=${this.sendSticker} />
 				${this.state.packs.map(pack => html`<${Pack} id=${pack.id} pack=${pack} send=${this.sendSticker} />`)}
